@@ -12,6 +12,11 @@ B = [3, 5, 7, 8, 11, 3]
 # and returns an equivalent set with all duplicates removed
 def simplify(A):
     # Provide your code here...
+    simpList = []
+    for i in A:
+        if i not in simpList:
+            simpList.append(i)
+    return simpList
     
 # Testing the simplify function
 print ("A = ", simplify(A))
@@ -29,9 +34,10 @@ print("")
 # The resulting set should be a Python list with no duplicates
 def union(A, B):
     # Provide your code here...
+    return simplify(A+B)
     
 # Testing the union function    
-print "A union B = ", union(A, B)
+print ("A union B = ", union(A, B))
 
 # Expected:
 # A union B =  [1, 2, 5, 8, 12, 3, 7, 11]
@@ -44,6 +50,12 @@ print("")
 # The resulting set should be a Python list with no duplicates
 def intersection(A, B):
     # Provide your code here...
+    intersectionList = []
+    for i in A:
+        if i in B:
+            intersectionList.append(i)
+    return simplify(intersectionList)
+    
     
 # Testing the intersection function    
 print ("A intersection B = ", intersection(A, B))
@@ -59,6 +71,14 @@ print("")
 # if A is a subset of B, and False otherwise
 def subset(A, B):
     # Provide your code here...
+    count = len(A)
+    for i in A:
+        if i in B:
+            count = count - 1
+    if count == 0:
+        return True
+    else:
+        return False
     
 # Testing the subset function   
 print ("A subset of B:", subset(A, B)) 
@@ -76,6 +96,12 @@ print("")
 # if they are equal, and False otherwise
 def equal(A, B):
     # Provide your code here...
+    isEqual = False
+    A1 = simplify(A)
+    B1 = simplify(B)
+    if A1 == union(A,B):
+        isEqual = True
+    return isEqual
     
 # Testing the equal function
 print ("A == B:", equal(A, B))
@@ -93,6 +119,12 @@ print("")
 # The result should be represented as a list of tuples, ex: [(1, 1), (1, 2), ...]
 def cartesian_product(A, B):
     # Provide your code here...
+    B2 = simplify(B)
+    C = []
+    for x in range(len(A)):
+        for y in range(len(B)-1):
+            C.append((A[x],B[y]))
+    return C
 
 # Testing the cartesian_product function
 print ("[1] x B =", cartesian_product([1], B))
@@ -112,6 +144,10 @@ print("")
 # The result should be represented as a list of lists, ex: [[], [1], [2], [1, 2]]
 def power_set(A):
     # Provide your code here...
+    powerSetList = [[]]
+    for i in A:
+        powerSetList += [j+[i] for j in powerSetList]
+    return powerSetList
 
 # Testing the power_set function        
 print ("P([1, 2, 3]) =", power_set([1, 2, 3]))
