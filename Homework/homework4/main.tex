@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Homework 4}
+\author{Jatnael Montes }
+\date{March 8, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Exercises}
+Prove (or disprove) the following results, showing all steps of your argument.
+\begin{enumerate}
+\item The sum of two odd integers is even. \\
+Let a = 2n+1, b = 2k+1 
+\begin{align*}
+a + b = (2n + 1) + (2k + 1) \\
+= 2n + 2k + 2\\
+= 2(n + k + 1)\\
+\end{align*}
+Therefore the result holds
+
+
+
+\item The sum of two even integers is even. \\
+Let a = 2n, b = 2k 
+\begin{align*}
+a + b = 2n + 2k \\
+= 2(n + k)
+\end{align*}
+Therefore the result holds
+
+\item The square of an even number is even. \\
+Let a = 2n
+\begin{align*}
+a^2 = (2n)^2 \\
+=4n^2 \\
+= 2(2n)^2 \\
+\end{align*}
+Therefore the result holds
+
+\item The product of two odd integers is odd. \\
+Let a = 2n+1, b = 2k+1 
+\begin{align*}
+ab = (2n + 1)(2k + 1) \\
+= 4kn + 2n + 2k + 1 \\
+= 2(2kn + n + k) + 1 \\
+\end{align*}
+Therefore the result holds
+
+\item If $n^3$ + 5 is odd then n is even, for any n $\in$ Z. \\
+We can solve this by using contraposition, so let n = 2k+1
+\begin{align*}
+n^3 + 5 = (2k + 1)^3 + 5 \\
+= 8k^3 + 12k^2 + 6k + 1 + 5\\
+= 8k^3 + 12k^2 + 6k + 6 \\
+= 2(4k^3 + 6k^2 + 3k + 3) \\
+\end{align*}
+Therefore the original result holds
+
+\item If 3n + 2 is even then n is even, for any n $\in$ Z. \\
+We can solve this using contraposition, so let n = 2k+1
+\begin{align*}
+3n + 2 = 3(2k + 1) + 2 \\
+= 6k + 3 + 2 \\
+= 6k + 4 + 1 \\
+= 2(3k + 2) + 1 \\
+\end{align*}
+Therefore the original result holds
+
+\item The sum of a rational number and an irrational number is irrational. \\
+We can prove this via contradiction, Let I be a irrational number and let n = $p/q$
+
+\begin{align*}
+n + I =a/b \\
+p/q + I = a/b \\
+I =a/b - p/q \\
+= (aq-bp)/bq \\
+\end{align*}
+
+This means that I is rational, a contradiction to our original statement
+
+\item The product of two irrational numbers is irrational. \\
+Since we know that $\sqrt{2}$ is irrational, we can do the following:
+
+\begin{align*}
+\sqrt{2}\sqrt{2} = 2^{\frac{1}{2}} 2^{\frac{1}{2}} \\
+= 2^1 \\
+= 2 \\
+\end{align*}
+So a product of two irrationals is rational, therefore result is false.
+
+\item Use mathematical induction to prove that the first n even integers add up to n(n + 1) \\
+\textbf{Base case: }Set n = 1
+\begin{align*}
+2 = 1(1 + 1) = 2 \\
+\end{align*}
+Therefore the base case holds 
+
+\textbf{Induction Hypothesis: }Assume the property holds when n = $k - 1$ \\
+\begin{align*}
+     2 + 4 +. . .+ 2(k-1) =k(k-1) \\
+\end{align*}
+\textbf{Inductive Step: }Show that if property holds for k-1 then it must hold for k \\
+\begin{align*}
+    2+4+...+2(k-1)=k(k-1)  \\
+    = k^2-k+2k \\
+    = k^2+k \\
+    = k(k+1)
+\end{align*}
+Therefore the property holds for all positive integers.
+
+
+\item Use mathematical induction to prove that $n^3$ + 2n is divisible by 3. \\
+\textbf{Base case:} Set n = 1
+\begin{align*}
+1^3 + 2(1)/3 = 3/3 = 1 \\
+\end{align*}
+ Therefore the base case holds \\
+ 
+ \textbf{Induction Hypothesis:} Assume if it works for n = k then $k^3$ + 2k is divisible by 3
+ 
+ \textbf{Inductive Step:} Show that if it works for k, then it will work for k+1
+ \begin{align*}
+ (k+1)^3 + 2(k+1) \\
+ = k^3+3k^2+3k+1+2k+2 \\
+ = k^3+2k+3k^2+3k+3 \\
+ = k^3+2k+3(k^2+k+1) \\
+ \end{align*}
+ Therefore result is true for all n.
+ 
+
+\end{enumerate}
+
+\end{document}
